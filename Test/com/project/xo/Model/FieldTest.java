@@ -32,7 +32,7 @@ public class FieldTest {
     @Test
     public void setFigureWhenAlreadyOccupiedTest() throws AlreadyOccupiedException, InvalidPointException {
         final Field field = new Field();
-        final Point inputPoint = new Point(-1, 0);
+        final Point inputPoint = new Point(0, 0);
         final Figure inputFigure = Figure.O;
 
         field.setFigure(inputPoint, inputFigure);
