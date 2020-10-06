@@ -12,14 +12,14 @@ public class FieldTest {
 
     @Test
     public void getSizeTest() {
-        final Field field = new Field();
+        final Field field = new Field(3);
 
         assertEquals(3, field.getSize());
     }
 
     @Test
     public void setFigureTest() throws AlreadyOccupiedException, InvalidPointException {
-        final Field field = new Field();
+        final Field field = new Field(3);
         final Point inputPoint = new Point(0, 0);
         final Figure inputFigure = Figure.O;
 
@@ -31,7 +31,7 @@ public class FieldTest {
 
     @Test
     public void getFigureWhenFigureIsNotSetTest() throws InvalidPointException {
-        final Field field = new Field();
+        final Field field = new Field(3);
         final Point inputPoint = new Point(0, 0);
 
         final Figure actualFigure = field.getFigure(inputPoint);
@@ -41,7 +41,7 @@ public class FieldTest {
 
     @Test
     public void getFigureWhenXLessThenZeroTest(){
-        final Field field = new Field();
+        final Field field = new Field(3);
         final Point inputPoint = new Point(-1, 0);
 
         try {
@@ -54,7 +54,7 @@ public class FieldTest {
 
     @Test
     public void getFigureWhenXBiggerThanSizeTest(){
-        final Field field = new Field();
+        final Field field = new Field(3);
         final Point inputPoint = new Point(field.getSize() + 1, 0);
 
         try {
@@ -67,7 +67,7 @@ public class FieldTest {
 
     @Test
     public void getFigureWhenYLessThenZeroTest(){
-        final Field field = new Field();
+        final Field field = new Field(3);
         final Point inputPoint = new Point(0, -1);
 
         try {
@@ -80,7 +80,7 @@ public class FieldTest {
 
     @Test
     public void getFigureWhenYBiggerThanSizeTest(){
-        final Field field = new Field();
+        final Field field = new Field(3);
         final Point inputPoint = new Point(0, field.getSize() + 1);
 
         try {
@@ -92,6 +92,6 @@ public class FieldTest {
     }
 
     /**
-     * Также нужно написать тесты для оюоих случаев, когда X и Y оба больше Size или менше 0
+     * Также можно написать тесты для других случаев, когда X и Y оба больше Size или менше 0
      */
 }
